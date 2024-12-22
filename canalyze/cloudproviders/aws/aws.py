@@ -1,5 +1,6 @@
 from rich.console import Console
 from rich.table import Table
+from rich.progress import track
 
 from .. import interface
 from .analyzer.eks_observability.analyzer import EKSObservabilityAnalyzer
@@ -18,7 +19,9 @@ class AWSCloudProviders(interface.CloudProvider):
 
     def analyze(self):
         ret = {}
-        for analyzer in self.analyzers:
+
+        # add progress bar
+        for analyzer in track(self.analyzers, description="Analyzing..."):
             analyzer.analyze()
             Warnings = analyzer.recommendations()
             if len(Warnings) == 0:
