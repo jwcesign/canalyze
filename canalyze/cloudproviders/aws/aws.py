@@ -7,6 +7,7 @@ from .analyzer.eks_observability.analyzer import EKSObservabilityAnalyzer
 from .analyzer.ebs_idle.analyzer import EBSIdleAnalyzer
 from .analyzer.eip_idle.analyzer import EIPIdleAnalyzer
 from .analyzer.eks_elb_duplicate.analyzer import EKSELBDuplicateAnalyzer
+from .analyzer.ebs_gp2.analyzer import EBSGP2Analyzer
 
 class AWSCloudProviders(interface.CloudProvider):
     def __init__(self, region: str):
@@ -15,6 +16,7 @@ class AWSCloudProviders(interface.CloudProvider):
             EBSIdleAnalyzer(region),
             EIPIdleAnalyzer(region),
             EKSELBDuplicateAnalyzer(region),
+            EBSGP2Analyzer(region),
         }
 
     def analyze(self):
