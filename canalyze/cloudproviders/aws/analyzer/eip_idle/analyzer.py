@@ -8,6 +8,12 @@ class EIPIdleAnalyzer:
         self.client = boto3.client('ec2', region_name=region)
         self.region = region
 
+    def name(self):
+        return "EIPIdle"
+
+    def fix_level(self):
+        return "easy"
+
     def analyze(self):
         eips = self.client.describe_addresses()
         for eip in eips['Addresses']:

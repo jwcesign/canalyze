@@ -16,5 +16,13 @@ def Analyzer(metaclass=abc.ABCMeta):
         pass
 
     @abc.abstractmethod
+    def name(self):
+        pass
+
+    @abc.abstractmethod
+    def fix_level(self):
+        pass
+
+    @abc.abstractmethod
     def recommendations(self):
         pass

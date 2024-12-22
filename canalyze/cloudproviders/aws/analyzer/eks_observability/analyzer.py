@@ -8,6 +8,12 @@ class EKSObservabilityAnalyzer:
         self.client = boto3.client('eks', region_name=region)
         self.region = region
 
+    def name(self):
+        return "EKSObservability"
+
+    def fix_level(self):
+        return "easy"
+
     def analyze(self):
         clusters =self.client.list_clusters()
         cluster_info = []

@@ -8,6 +8,12 @@ class EBSIdleAnalyzer:
         self.client = boto3.client('ec2', region_name=region)
         self.region = region
 
+    def name(self):
+        return "EBSIdle"
+
+    def fix_level(self):
+        return "easy"
+
     def analyze(self):
         volumes = self.client.describe_volumes()
         for volume in volumes['Volumes']:
