@@ -25,4 +25,6 @@ Given the complexity of operations, the initial focus will be on **analysis** an
 
 ![img](./imgs/arch.jpg)
 
+For different recommandations, it maybe impossible to explain in a short sentence, in this case, we need to refer to the details document.
+
 Based on this architecture, we can implement different layers of abstraction as needed.
