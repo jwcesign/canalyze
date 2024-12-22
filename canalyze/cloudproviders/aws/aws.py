@@ -4,12 +4,14 @@ from rich.table import Table
 from .. import interface
 from .analyzer.eks_observability.analyzer import EKSObservabilityAnalyzer
 from .analyzer.ebs_idle.analyzer import EBSIdleAnalyzer
+from .analyzer.eip_idle.analyzer import EIPIdleAnalyzer
 
 class AWSCloudProviders(interface.CloudProvider):
     def __init__(self, region: str):
         self.analyzers = {
             EKSObservabilityAnalyzer(region),
-            EBSIdleAnalyzer(region)
+            EBSIdleAnalyzer(region),
+            EIPIdleAnalyzer(region),
         }
 
     def analyze(self):
