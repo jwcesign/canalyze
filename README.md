@@ -1,12 +1,23 @@
 # canalyze  
 
-**A cloud analysis tool designed to help you identify cost-saving opportunities in your cloud infrastructure.**  
+A cloud analysis tool designed to help you identify cost-saving opportunities in your cloud infrastructure.
+
+## Installation
+
+Currently, `canalyze` is not packaged for installation with a single command. However, you can try it out by following these steps:
+
+```bash
+git clone https://github.com/jwcesign/canalyze.git
+cd canalyze
+python3 -m pip install -r requirements.txt
+python3 canalyze/cli.py --provider aws --region us-east-2
+```
 
 ## How It Works  
 
 Run the command:  
 ```bash
-canalyze --provider aws --region us-east-2
+python3 canalyze/cli.py --provider aws --region us-east-2
 ```  
 
 This will generate results like the following:  
@@ -15,6 +26,6 @@ This will generate results like the following:
 
 Follow the provided recommendations to optimize your cloud setup and reduce costs effectively.
 
-## Installation
+## License
 
-TBD
+This project is released under the [Apache 2.0 License](LICENSE).
