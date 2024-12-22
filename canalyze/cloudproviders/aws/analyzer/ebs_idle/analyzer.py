@@ -23,5 +23,5 @@ class EBSIdleAnalyzer:
     def recommendations(self) -> list:
         ret: list = []
         for warning in self.warning:
-            ret.append(f"EBS Volume {warning.resource_name} in region {warning.region} is idle, delete it to reduce the CloudWatch costs")
+            ret.append(f"EBS Volume {warning.resource_name} in region {warning.region} is idle, delete it to reduce the Cloud costs")
         return ret
