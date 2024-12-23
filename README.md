@@ -1,6 +1,6 @@
 # canalyze  
 
-A cloud analysis tool designed to help you identify cost-saving opportunities in your cloud infrastructure.
+A cloud analysis tool designed to identify opportunities for cost savings in your public cloud infrastructure.
 
 ## Installation
 

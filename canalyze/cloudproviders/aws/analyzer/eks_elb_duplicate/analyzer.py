@@ -44,5 +44,5 @@ class EKSELBDuplicateAnalyzer:
     def recommendations(self) -> list:
         ret: list = []
         for warning in self.warning:
-            ret.append(f"EKS cluster {warning.resource_name} in region {warning.region} has multiple ELBs(It cost extra money), you can only use one ELB per cluster, and the routing could be done in the cluster, through the service load balancer")
+            ret.append(f"EKS cluster {warning.resource_name} in region {warning.region} has multiple ELBs(It cost extra money), you can only use one ELB per cluster if you don't have high throughput, and the routing could be done in the cluster, through the service load balancer")
         return ret
